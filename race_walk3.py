@@ -35,9 +35,9 @@ def warp_image(frame):
     return transformed_frame,frame_copy
 
 def thresh(image):
-    # Llevar a escala de grises
+    # BGR2GRAY
     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-    # Filtro
+    # Filter
     gray = cv2.GaussianBlur(gray, (5,5), 0)
     # Thresholding
     _, thresh_image = cv2.threshold(gray,100,255,cv2.THRESH_BINARY)
@@ -95,7 +95,6 @@ def pub_velocities(v,w):
 
 def image_callback(ros_image):
     global bridge
-    # imagen ros a compatible con opencv
     try:
         cv_image = bridge.imgmsg_to_cv2(ros_image,"bgr8")
     except CvBridgeError as e:
@@ -113,7 +112,7 @@ def image_callback(ros_image):
     # Histogram determination
     left_hist = histog(left_img)
     right_hist = histog(right_img)
-    # Middle points between peaks
+    # Peak detection
     left_peaks, _ = find_peaks(left_hist, height=2000)
     right_peaks, _ = find_peaks(right_hist, height=2000)
     pub_velocities(0.05,0.00)
@@ -124,8 +123,8 @@ def image_callback(ros_image):
         center_right_lane = right_peaks[-1]
         pub_velocities(0.04,0.01)
     else:
-        # Controles
-        # Giro derecha +++
+        # Controls
+        # Turn right +++
         pub_velocities(0.02,-0.05)
     if left_peaks.size > 1:
         center_left_lane = left_peaks[0] + int((left_peaks[-1]-left_peaks[0])/2)
@@ -133,8 +132,8 @@ def image_callback(ros_image):
         center_left_lane = left_peaks[0]
         pub_velocities(0.04,-0.01)
     else:        
-        # Controles
-        # Giro izquierda +++
+        # Control
+        # Turn left +++
         pub_velocities(0.02,0.05)
     print("draw")
     # Drawing Window
@@ -179,7 +178,7 @@ def image_callback(ros_image):
 
 def main(args):
     rospy.init_node('image_converter', anonymous=True)
-    # para turtlebot3 waffle_pi
+    # turtlebot3 waffle_pi
     image_topic = "/camera/rgb/image_raw"
     image_sub = rospy.Subscriber(image_topic,Image,image_callback)  
     
@@ -187,7 +186,7 @@ def main(args):
         rospy.spin()
     except KeyboardInterrupt:
         print("Shutting down")
-    #cv2.destroyAllWindows()
+    
 
 if __name__== '__main__':
     main(sys.argv)
