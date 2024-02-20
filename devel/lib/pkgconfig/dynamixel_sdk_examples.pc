@@ -1,0 +1,8 @@
+prefix=/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/devel
+
+Name: dynamixel_sdk_examples
+Description: Description of dynamixel_sdk_examples
+Version: 3.7.51
+Cflags: -I/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs dynamixel_sdk

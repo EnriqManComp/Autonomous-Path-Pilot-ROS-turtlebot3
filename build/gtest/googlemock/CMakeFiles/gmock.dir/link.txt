@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libgmock.so -o ../lib/libgmock.so CMakeFiles/gmock.dir/src/gmock-all.cc.o  -Wl,-rpath,/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/build/gtest/lib ../lib/libgtest.so -lpthread 

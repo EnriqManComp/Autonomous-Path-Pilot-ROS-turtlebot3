@@ -1,0 +1,8 @@
+prefix=/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/install
+
+Name: turtlebot3_slam
+Description: Description of turtlebot3_slam
+Version: 1.2.6
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp sensor_msgs

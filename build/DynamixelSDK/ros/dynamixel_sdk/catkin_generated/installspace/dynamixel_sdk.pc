@@ -1,0 +1,8 @@
+prefix=/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/install
+
+Name: dynamixel_sdk
+Description: Description of dynamixel_sdk
+Version: 3.7.51
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ldynamixel_sdk
+Requires: roscpp rospy

@@ -1,0 +1,8 @@
+prefix=/media/enrique/ae414e9e-3895-46c8-92d6-d4cb9803e8e8/enrique/Road-Lane-Detection-ROS-turtlebot3/install
+
+Name: auto_race
+Description: Description of auto_race
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
