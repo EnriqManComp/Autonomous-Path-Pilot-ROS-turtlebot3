@@ -45,7 +45,7 @@ Additionally, you should modify the following launch file within the package: /t
 </launch>
 ```
 
-## How to run the Autonomous Path Maintenance Project
+## How to run the Autonomous Path Pilot Project
 
 1) Copy the files `odometry.py` and `race_walk.py` into the main package of your workspace and apply permissions with the commands:
    ```
