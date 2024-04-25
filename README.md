@@ -1,29 +1,27 @@
-# Road-Lane-Detection-ROS-turtlebot3
-Road lane detection using ROS and turtlebot3 
+# Autonomous Path Retention System in ROS using turtlebot3 waffle_pi
 
-## Prerequirements
+This project serves as a basic example of how to address the problem of keeping a robot within a path.
 
-This project is built in:
+## Prerequisites
+
+This project is built on:
 * Ubuntu 20.04
 * ROS Noetic
 * Gazebo 11
-* (optional) A catkin workspace. You can find how to create it [here](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
+* (Optional) A catkin workspace. Instructions for creating one can be found [here](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 
-You must have clone the following packages in your workspace to run this project:
+To run this project, you must have cloned the following packages into your workspace:
 * Turtlebot3 main packages
 ```
 git clone -b noetic-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 ```
-* Turtlebot3 Simulations to run in Gazebo.
+* Turtlebot3 Simulations for use in Gazebo. Additional information can be found on the [Turtlebot official site](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)
 ```
 git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 ```
-
-You can also find additional information in the [Turtlebot official site](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)
-
-Additionally you should change the following launch file: in the package /turtlebot3_simulations/turtlebot3_gazebo/turtlebot3_autorace.launch
+Additionally, you should modify the following launch file within the package: /turtlebot3_simulations/turtlebot3_gazebo/turtlebot3_autorace.launch
 ```
 <launch>
   <env name="GAZEBO_RESOURCE_PATH" value="$(find turtlebot3_gazebo)/models/turtlebot3_autorace/ground_picture" />
@@ -47,17 +45,21 @@ Additionally you should change the following launch file: in the package /turtle
 </launch>
 ```
 
-## How to run the road lane project
+## How to run the Autonomous Path Retention System Project
 
-1) Copy the files odometry.py and race_walk.py into your main package of the workspace and apply the permissions with the command ```chmod +x odometry.py``` and ```chmod +x race_walk.py```
-2) Run in a terminal the following commands:
+1) Copy the files `odometry.py` and `race_walk.py` into the main package of your workspace and apply permissions with the commands:
+   ```
+   chmod +x odometry.py
+   chmod +x race_walk.py
+   ```
+2) In a terminal, run the following commands:
    ```
    export TURTLEBOT3_MODEL=waffle_pi
    roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
    ```
-3) Run in other terminal the command ``` rosrun <name_of_your_package> odometry.py```
-4) Run in other terminal the command ``` rosrun <name_of_your_package> race_walk.py```
+4) In another terminal, run the command: ``` rosrun <name_of_your_package> odometry.py```
+5) In another terminal, run the command: ``` rosrun <name_of_your_package> race_walk.py```
 
-Note to the disclaimers: The intention of this project is to provide the base framework to the problem of keep the robot inside the road. Feel free to continue the smooth of the controls and modify the solution approach.
+The intention of this project is to provide a basic framework for solving the problem of keeping the robot within the road. Feel free to fine-tune the controls and modify the approach as needed.
 
 
