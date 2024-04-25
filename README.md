@@ -60,6 +60,6 @@ Additionally, you should modify the following launch file within the package: /t
 4) In another terminal, run the command: ``` rosrun <name_of_your_package> odometry.py```
 5) In another terminal, run the command: ``` rosrun <name_of_your_package> race_walk.py```
 
-The intention of this project is to provide a basic framework for solving the problem of keeping the robot within the road. Feel free to fine-tune the controls and modify the approach as needed.
+***Note: The intention of this project is to provide a basic framework for solving the problem of keeping the robot within the road. Feel free to fine-tune the controls and modify the approach as needed.***
 
 
