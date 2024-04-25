@@ -1,4 +1,4 @@
-# Autonomous Path Maintenance in ROS using turtlebot3 waffle_pi
+# Autonomous Path Maintenance using ROS and Turtlebot3 Waffle_pi
 
 This project serves as a basic example of how to address the problem of keeping a robot within a path.
 
