@@ -1,4 +1,4 @@
-# Autonomous Path Retention System in ROS using turtlebot3 waffle_pi
+# Autonomous Path Maintenance in ROS using turtlebot3 waffle_pi
 
 This project serves as a basic example of how to address the problem of keeping a robot within a path.
 
@@ -45,7 +45,7 @@ Additionally, you should modify the following launch file within the package: /t
 </launch>
 ```
 
-## How to run the Autonomous Path Retention System Project
+## How to run the Autonomous Path Maintenance Project
 
 1) Copy the files `odometry.py` and `race_walk.py` into the main package of your workspace and apply permissions with the commands:
    ```
